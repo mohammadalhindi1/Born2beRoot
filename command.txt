@@ -4,6 +4,9 @@ diff signature.txt <(echo "a608ed62f69fec4cac1a9636f2edd281125a8928")
 #see its debian :
 hostnamectl
 
+#show all groups :
+sudo groups
+
 #add user :
 sudo adduser omar
 
@@ -17,11 +20,12 @@ sudo adduser omar omargroup
 getent group [name of group]
 
 #check the ufw :
-sudo ufw status
 sudo service ufw status
+sudo systemctl ufw status
 
 #check the ssh :
 sudo service ssh status
+sudo systemctl status ssh
 
 #check how we made the ssh only acsess at the 4242 port :
 sudo nano etc/ssh/sshd_config
@@ -35,7 +39,8 @@ sudo nano /etc/login.defs
 #change hostname :
 sudo hostnamectl set-hostname [new_hostname]
 
-#lsblk
+#Partition :
+lsblk
 
 #sudo password :
 nano /etc/sudoers.d/sudo_config
@@ -49,8 +54,28 @@ ufw allow 8080
 #delete  rule 8080:
 ufw delete allow 8080
 
+#port number allow :
+sudo ufw allow 22    # Allow SSH on default port 22
+sudo ufw allow 4242  # Allow SSH on custom port 4242 (like in Born2beRoot)
+sudo ufw allow 80    # Allow HTTP (port 80)
+sudo ufw allow 443   # Allow HTTPS (port 443)
+sudo ufw deny 23     # blocks Telnet # Deny a port
+
 #use ssh
 ssh omar2@localhost -p 4444
 
 #open cron
 sudo crontab -u root -e
+
+# New way ssh (recommended) :
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl stop ssh
+sudo systemctl restart ssh    # Restart the service
+sudo systemctl enable ssh     # Enable auto start at boot
+sudo systemctl disable ssh    # Disable auto start at boot
+
+# In UFW also you can use :
+sudo ufw allow ssh
+sudo ufw allow http   
+sudo ufw allow https    
