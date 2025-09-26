@@ -8,13 +8,13 @@ hostnamectl
 sudo groups
 
 #add user :
-sudo adduser omar
+sudo adduser username
 
 #add group :
-sudo addgroup omargroup
+sudo addgroup groupname
 
 #add user to group :
-sudo adduser omar omargroup
+sudo adduser username omargroup
 
 #check if user in group :
 getent group [name of group]
