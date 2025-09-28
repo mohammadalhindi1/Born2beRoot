@@ -21,11 +21,11 @@ getent group [nameOfGroup]
 
 #check the ufw :
 sudo service ufw status
-sudo systemctl ufw status
+sudo systemctl status ufw 
 
 #check the ssh :
 sudo service ssh status
-sudo systemctl status ssh
+sudo systemctl ssh status 
 
 #check how we made the ssh only acsess at the 4242 port :
 sudo nano etc/ssh/sshd_config
