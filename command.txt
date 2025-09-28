@@ -14,10 +14,10 @@ sudo adduser username
 sudo addgroup groupname
 
 #add user to group :
-sudo adduser username omargroup
+sudo adduser username groupName
 
 #check if user in group :
-getent group [name of group]
+getent group [nameOfGroup]
 
 #check the ufw :
 sudo service ufw status
