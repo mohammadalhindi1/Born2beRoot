@@ -1,3 +1,19 @@
+mariadb -u malhendi -pHINDI123hindi
+
+sudo systemctl status lighttpd mariadb
+
+sudo systemctl status lighttpd --no-pager
+
+sudo mysql -e "SHOW DATABASES;"
+
+lsblk
+df -h
+
+dpkg -l | grep sudo 
+
+sudo apt install glances -y
+glances
+
 #check the sig :
 diff signature.txt <(echo "a608ed62f69fec4cac1a9636f2edd281125a8928")
 
