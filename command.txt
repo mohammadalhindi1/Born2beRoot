@@ -1,20 +1,4 @@
-mariadb -u malhendi -pHINDI123hindi
-
-sudo systemctl status lighttpd mariadb
-
-sudo systemctl status lighttpd --no-pager
-
-sudo mysql -e "SHOW DATABASES;"
-
-lsblk
-df -h
-
-dpkg -l | grep sudo 
-
-sudo apt install glances -y
-glances
-
-#check the sig :
+#check the signature :
 diff signature.txt <(echo "a608ed62f69fec4cac1a9636f2edd281125a8928")
 
 #see its debian :
@@ -95,3 +79,51 @@ sudo systemctl disable ssh    # Disable auto start at boot
 sudo ufw allow ssh
 sudo ufw allow http   
 sudo ufw allow https    
+
+mariadb -u malhendi -p
+SHOW DATABASES;
+
+sudo systemctl status lighttpd mariadb
+
+sudo systemctl status lighttpd --no-pager
+
+# install the server (you only have the client now)
+sudo apt update
+sudo apt install mariadb-server
+
+# start & enable the service
+sudo systemctl enable --now mariadb
+
+# run the hardening script
+sudo mariadb-secure-installation
+
+
+Follow the prompts: set root auth as you prefer, remove anonymous users, disallow remote root, remove test DB, reload privileges.
+
+Quick checks
+# is the service running?
+systemctl status mariadb
+
+# can you log in as root (socket auth)?
+sudo mariadb
+
+If you actually want Oracle MySQL (not MariaDB)
+
+Install mysql-server instead:
+
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl enable --now mysql
+sudo mysql_secure_installation
+
+
+Pick one stack and stick with it to avoid tool/name mismatches.
+
+lsblk
+df -h
+
+dpkg -l | grep sudo 
+sudo -v
+
+sudo apt install glances -y
+glances
