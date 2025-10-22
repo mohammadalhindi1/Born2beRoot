@@ -49,8 +49,11 @@ nano /etc/sudoers.d/sudo_config
 #we made :
 mkdir /var/log/sudo
 
+Check the days : 
+sudo chage -l [username]
+
 Change the orders of the days :
-sudo chage -m 2 -M 30 [name]
+sudo chage -m 2 -M 30 [username]
 
 Make sure it is downloaded to your device:
 dpkg -l | grep [name]  || [name] -V
