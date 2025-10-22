@@ -41,12 +41,21 @@ sudo hostnamectl set-hostname [new_hostname]
 
 #Partition :
 lsblk
+df -h
 
 #sudo password :
 nano /etc/sudoers.d/sudo_config
 
 #we made :
 mkdir /var/log/sudo
+
+Change the orders of the days :
+sudo chage -m 2 -M 30 [name]
+
+Make sure it is downloaded to your device:
+dpkg -l | grep [name]  || [name] -V
+ex:dpkg -l | grep sudo
+ex:sudo -v
 
 #Add a new rule to open port 8080 :
 ufw allow 8080
@@ -116,14 +125,7 @@ sudo apt install mysql-server
 sudo systemctl enable --now mysql
 sudo mysql_secure_installation
 
-
-Pick one stack and stick with it to avoid tool/name mismatches.
-
-lsblk
-df -h
-
-dpkg -l | grep sudo 
-sudo -v
-
 sudo apt install glances -y
 glances
+
+Pick one stack and stick with it to avoid tool/name mismatches.
