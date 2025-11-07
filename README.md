@@ -27,3 +27,8 @@ The project aims to:
 **Mohammad Alhindi**  
 DevOps Engineer | Cloud & System Administration  
 [GitHub](https://github.com/mohammadalhindi1)
+
+───────────────────────────────
+© 2025 Mohammad Alhindi — All Rights Reserved  
+Reusing or copying this code without permission is not cool — be original.
+───────────────────────────────
