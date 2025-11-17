@@ -32,3 +32,4 @@ DevOps Engineer | Cloud & System Administration
 © 2025 Mohammad Alhindi — All Rights Reserved  
 Reusing or copying this code without permission is not cool — be original.
 ───────────────────────────────
+
