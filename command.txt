@@ -112,7 +112,6 @@ sudo mariadb-secure-installation
 
 Follow the prompts: set root auth as you prefer, remove anonymous users, disallow remote root, remove test DB, reload privileges.
 
-Quick checks
 # is the service running?
 systemctl status mariadb
 
