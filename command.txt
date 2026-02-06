@@ -1,6 +1,9 @@
 #check the signature :
 diff signature.txt <(echo "a608ed62f69fec4cac1a9636f2edd281125a8928")
 
+#use ssh
+ssh malhendi@localhost -p 4242
+
 #see its debian :
 hostnamectl
 
@@ -72,9 +75,6 @@ sudo ufw allow 4242  # Allow SSH on custom port 4242 (like in Born2beRoot)
 sudo ufw allow 80    # Allow HTTP (port 80)
 sudo ufw allow 443   # Allow HTTPS (port 443)
 sudo ufw deny 23     # blocks Telnet # Deny a port
-
-#use ssh
-ssh omar2@localhost -p 4444
 
 #open cron
 sudo crontab -u root -e
