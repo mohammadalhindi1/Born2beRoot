@@ -35,7 +35,15 @@ logged_users=$(who | awk '{print $1}' | sort -u | wc -l)
 
 # NETWORK
 ip_address=$(hostname -I | awk '{print $1}')
-mac_address=$(ip -o link | awk '$2 != "lo:" && /link\/ether/ {print $17; exit}')
+mac_address=$(ip -o link | awk '
+    $2 != "lo:" && /link\/ether/ {
+        for (i = 1; i <= NF; i++)
+            if ($i == "link/ether") {
+                print $(i + 1)
+                exit
+            }
+    }'
+)
 
 # SUDO COMMANDS
 sudo_commands=$(journalctl _COMM=sudo --no-pager 2>/dev/null | grep -c 'COMMAND=')
